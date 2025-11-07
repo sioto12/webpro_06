@@ -28,6 +28,30 @@ app.get("/keiyo_add", (req, res) => {
 
 });
 
+let band = [
+  { id:1, code:"001", name:"ポピパ"},
+  { id:2, code:"002", name:"ロゼリア"},
+  { id:3, code:"003", name:"パスパレ"},
+  { id:4, code:"004", name:"ハロハピ"},
+  { id:5, code:"005", name:"アフグロ"},
+  { id:6, code:"006", name:"ラス"},
+];
+
+app.get("/band", (req, res) => {
+  // 本来ならここにDBとのやり取りが入る
+  res.render('bd1', { data: band });
+});
+
+app.get("/band_add", (req, res) => {
+  let id = req.query.id;
+  let code = req.query.code;
+  let name = req.query.name;
+  let newdata = { id: id, code: code, name: name };
+  station.push( newdata );
+  res.redirect('/public/band_add.html');
+
+});
+
 
 app.get("/hello1", (req, res) => {
   const message1 = "Hello world";
