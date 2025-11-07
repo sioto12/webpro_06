@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>じゃんけん</title>
+</head>
+<body>
+    <form action="/janken0"><!--ここがアクセスのためのURL-->
+        <input type="checkbox" name="jan" id="1" value="1">
+        <label for="1">グー</label>
+        <input type="checkbox" name="jan" id="2" value="2">
+        <label for="2">チョキ</label>
+        <input type="checkbox" name="jan" id="3" value="3">
+        <label for="3">パー</label>
+        <input type="submit" values="じゃんけん　ポン"><!--submit→ボタン-->
+        <input type="hidden" name="win" value="0">
+        <input type="hidden" name="total" value="0">
+    </form>
+</body>
+</html>
