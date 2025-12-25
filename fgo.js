@@ -9,15 +9,15 @@ app.use(express.urlencoded({ extended: true }));
 
 
 let servant = [
-  { id:0, name:"ヤマトタケル", class:"セイバー", attribute:"天", policy:"中立", trait:"善", image: "https://appmedia.jp/wp-content/uploads/2025/02/180817_d3058.webp" },
-  { id:1, name:"メリュジーヌ", class:"ランサー", attribute:"地", policy:"中立", trait:"悪", image: "https://appmedia.jp/wp-content/uploads/2021/09/d63888db0252f3c1135b7371946fdbac.webp" },
-  { id:2, name:"バーヴァンシー", class:"アーチャー", attribute:"地", policy:"混沌", trait:"悪", image: "https://appmedia.jp/wp-content/uploads/2025/03/120751_abo8l.webp" },
-  { id:3, name:"太公望", class:"ライダー", attribute:"地", policy:"中立", trait:"善", image: "https://appmedia.jp/wp-content/uploads/2025/02/133950_zps6k.webp" },
-  { id:4, name:"トネリコ", class:"キャスター", attribute:"地", policy:"秩序", trait:"中庸", image: "https://appmedia.jp/wp-content/uploads/2025/02/171743_5sbqa.webp" },
-  { id:5, name:"光のコヤンスカヤ", class:"アサシン", attribute:"獣", policy:"秩序", trait:"悪", image: "https://appmedia.jp/wp-content/uploads/2025/02/130520_ol3n2.webp" },
-  { id:6, name:"モルガン", class:"バーサーカー", attribute:"地", policy:"秩序", trait:"悪", image: "https://appmedia.jp/wp-content/uploads/2021/09/734f9bf482e4ce71c761ecd54f453b32.webp" },
-  { id:7, name:"シエル", class:"ムーンキャンサー", attribute:"人", policy:"秩序", trait:"善", image: "https://appmedia.jp/wp-content/uploads/2025/02/190005_ez9vj.webp" },
-  { id:8, name:"オルガマリー", class:"ビースト", attribute:"星", policy:"秩序", trait:"悪", image: "https://appmedia.jp/wp-content/uploads/2025/03/193941_dl5ti.webp" },
+  { id:0, name:"ヤマトタケル", class:"セイバー", attribute:"天", policy:"中立", trait:"善", image: "/public/images/ヤマトタケル.png" },
+  { id:1, name:"メリュジーヌ", class:"ランサー", attribute:"地", policy:"中立", trait:"悪", image: "/public/images/メリュジーヌ.png" },
+  { id:2, name:"バーヴァンシー", class:"アーチャー", attribute:"地", policy:"混沌", trait:"悪", image: "/public/images/バーヴァンシー.png" },
+  { id:3, name:"太公望", class:"ライダー", attribute:"地", policy:"中立", trait:"善", image: "/public/images/太公望.png" },
+  { id:4, name:"トネリコ", class:"キャスター", attribute:"地", policy:"秩序", trait:"中庸", image: "/public/images/トネリコ.png" },
+  { id:5, name:"光のコヤンスカヤ", class:"アサシン", attribute:"獣", policy:"秩序", trait:"悪", image: "/public/images/光のコヤンスカヤ.png" },
+  { id:6, name:"モルガン", class:"バーサーカー", attribute:"地", policy:"秩序", trait:"悪", image: "/public/images/モルガン.png" },
+  { id:7, name:"シエル", class:"ムーンキャンサー", attribute:"人", policy:"秩序", trait:"善", image: "/public/images/シエル.png" },
+  { id:8, name:"オルガマリー", class:"ビースト", attribute:"星", policy:"秩序", trait:"悪", image: "/public/images/オルガマリー.png" },
 ];
 
 // 一覧
