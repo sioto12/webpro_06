@@ -135,12 +135,12 @@ Githubでは，様々な絵文字が用意されており，`:smile:`のよう�
 
 - [ ] 開発者向けドキュメントの作業
   - [x] 対象とするシステムの決定 :thinking:
-  - [ ] データ構造の決定 :thinking:
-  - [ ] ページ構造の検討 :thinking:
-  - [ ] ページ遷移の検討 :thinking:
-  - [ ] HTTPメソッドとリソース名の決定
-  - [ ] ページ遷移図の作成 :writing_hand:
-  - [ ] ページ構造の決定
+  - [x] データ構造の決定 :thinking:
+  - [x] ページ構造の検討 :thinking:
+  - [x] ページ遷移の検討 :thinking:
+  - [x] HTTPメソッドとリソース名の決定
+  - [x] ページ遷移図の作成 :writing_hand:
+  - [x] ページ構造の決定
   - [ ] ドキュメントの構成の検討 :thinking:
   - [ ] 概要 :writing_hand:
   - [ ] HTTPメソッドとリソース名一覧 :writing_hand:

@@ -1,0 +1,235 @@
+<!Doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>あなたの冠位サーヴァント</title>
+  <style>
+
+    
+    .servant-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      padding: 20px;
+    }
+
+    .servant-card {
+      position: relative;
+      border: 6px double #101d95;
+      border-radius: 12px;
+      width: 200px;
+      background-color: #ffffff;
+      overflow: hidden;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .delete-form {
+        position: absolute;
+        right: 10px;         
+        bottom: 10px;    
+        margin: 0;
+    }
+
+    .servant-img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      background-color: #ddd;
+    }
+
+    .card-info {
+      padding: 12px;
+    }
+
+    .card-info h3 {
+      margin: 0 0 8px 0;
+      font-size: 1.1em;
+    }
+
+    .card-info p {
+      margin: 4px 0;
+      font-size: 0.85em;
+      color: #555;
+    }
+
+
+    .btn-right-radius {
+      position: relative;
+      display: inline-block;
+      font-weight: bold;
+      padding: 0.25em 0.8em;
+      text-decoration: none;
+      color: #00BCD4;
+      background: #ECECEC;
+      border-radius: 0 15px 15px 0;
+      transition: .4s;
+      margin-top: 10px;
+    }
+
+    .btn-right-radius:hover {
+      background: #636363;
+      color: #fff; 
+    }
+
+    .btn-stitch {
+        display: inline-block;
+        padding: 0.5em 1em;
+        text-decoration: none;
+        background: #668ad8;
+        color: #FFF;
+        border-radius: 4px;
+        box-shadow: 0px 0px 0px 5px #668ad8;
+        border: dashed 1px #FFF;
+    }
+
+    .btn-stitch:hover {
+        border: dotted 1px #FFF;
+    }
+
+    .add-link {
+      display: block;
+      margin: 20px;
+      color: #4a90e2;
+    }
+
+    .bg_pattern {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: #f5f5f5;
+        opacity: 0.4;
+        z-index: -1;
+    }
+    .Cross {
+        background: 
+            radial-gradient(circle, transparent 20%, #f5f5f5 20%, #f5f5f5 80%, transparent 80%, transparent), 
+            radial-gradient(circle, transparent 20%, #f5f5f5 20%, #f5f5f5 80%, transparent 80%, transparent) 50px 50px, 
+            linear-gradient(#cccccc 4px, transparent 4px) 0 -2px, 
+            linear-gradient(90deg, #cccccc 4px, #f5f5f5 4px) -2px 0;
+        background-size: 100px 100px, 100px 100px, 50px 50px, 50px 50px;
+    }
+
+    .heading-25 {
+        position: relative;
+        padding-top: .75em;
+        color: #333333;
+        font-family: "MS PMincho", "Yu Mincho", "Hiragino Mincho ProN", serif;
+    }
+
+    .heading-25::before {
+        position: absolute;
+        bottom: .5em;
+        left: 0;
+        z-index: -1;
+        color: #5d97ae;
+        font-size: 1.5em;
+        line-height: 1;
+        content: attr(data-word);
+        pointer-events: none;
+        font-family: 'Georgia', serif;
+    }
+
+    .button-46 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 10px 10px rgb(0 0 0 / 20%);
+    background-image: linear-gradient(0, #7b1818, #8b2b2b);
+    color: #333333;
+    font-weight: 600;
+    font-size: .9em;
+    transition: transform .3s, box-shadow .3s;
+    
+    }
+
+    .button-46:hover {
+        transform: scale(.99);
+        box-shadow: 0 5px 5px rgb(0 0 0 / 20%);
+    }
+
+    .button-46 span {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background-image: linear-gradient(0, #fff, #ddd);
+        line-height: 45px;
+    }
+
+    
+
+    .box19 {
+        position: relative;
+        display: inline-block;
+        padding:0.3em 6.0em;
+    }
+    .box19:before,.box19:after{ 
+        content:'';
+        width: 20px;
+        height: 30px;
+        position: absolute;
+        display: inline-block;
+    }
+    .box19:before{
+        border-left: solid 1px #5767bf;
+        border-top: solid 1px #5767bf;
+        top:0;
+        left: 0;
+    }
+    .box19:after{
+        border-right: solid 1px #5767bf;
+        border-bottom: solid 1px #5767bf;
+        bottom:0;
+        right: 0;
+    }
+    .box19 p {
+        margin: 0; 
+        padding: 0;
+    }
+  </style>
+
+
+
+
+</head>
+<body>
+  <div class="box19">
+    <h2 class="heading-25" data-word="Fate/GrandOrder">あなたの冠位サーヴァント</h2>
+  </div> 
+  <div class="bg_pattern Cross"></div>
+  
+  <div class="bg_pattern Cross"></div>
+
+  <div class="servant-list">
+    <% for( let row of data ) { %>
+      <div class="servant-card">
+        <img src="<%= row.image %>" class="servant-img" alt="image">
+        
+        <div class="card-info">
+          <h3><%= row.name %></h3>
+          <p>クラス: <%= row.class %></p>
+          
+          <a href="/fgo/<%= row.id %>" class="btn-right-radius">詳細を見る</a>
+
+
+
+          <form action="/fgo/delete/<%= row.id %>" method="GET" class="delete-form">
+            <button type="submit" onclick="return confirm('削除しますか？')" class="button-46">
+                <span>削除</span>
+            </button>
+          </form>
+
+        </div>
+      </div>
+    <% } %>
+  </div>
+
+  <a href="/fgo/create" class="btn-stitch">追加画面へ</a>
+</body>
+</html>
