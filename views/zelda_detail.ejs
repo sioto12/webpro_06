@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title><%= data.name %></title>
+  <style>
+   h1 {
+  position: relative;
+  display: inline-block;
+  padding: 0 55px;
+}
+
+h1:before, h1:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  display: inline-block;
+  width: 45px;
+  height: 1px;
+  background-color: black;
+}
+
+h1:before {
+  left:0;
+}
+h1:after {
+  right: 0;
+}
+
+    table {
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    --dot-bg: black;
+    --dot-color: rgb(245, 232, 204);
+    --dot-size: 1px;
+    --dot-space: 22px;
+    background:
+        linear-gradient(90deg, var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
+        linear-gradient(var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
+        var(--dot-color);
+    }
+
+ html, body {
+    height: 100%;
+    margin: 0;
+ }
+
+  .table_design03 {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 700px;
+    background-color: #ffffff; 
+    margin: 20px auto;
+  }
+  .table_design03 th, .table_design03 td {
+    border-bottom: 2px solid #c1c7c6;
+    padding: 1em;
+  }
+  .table_design03 th {
+    border-bottom: 2px solid #4d9bc1;;
+    font-weight: bold;
+    text-align: center;
+    width: 20%;
+    min-width: 4em;
+  }
+
+  main {
+  flex: 1; 
+  padding: 20px; 
+  text-align: center; 
+  }
+
+  footer {
+  width: 100%;
+  height: 120px;
+  background-color: #d3cab0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+
+  .footer-text {
+    color: #838438;
+    font-size: 5em;
+    font-family: 'Georgia', serif;
+  }
+
+  .button-3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    padding: .9em 2em;
+    margin: 20px auto;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0 2px 3px rgb(0 0 0 / 25%), 0 2px 3px -2px rgb(0 0 0 / 15%);
+    background-color: #ddd3a2;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1em;
+}
+
+.button-3:hover {
+    background-color: #cdc392;
+}
+
+  </style>
+</head>
+<body>
+<main>
+
+  <h1><%= data.name %></h1>
+
+  
+  <table class="table_design03" >
+    <tbody>
+    <tr>
+      <th>ゲーム名</th>
+      <td><%= data.name %></td>
+    </tr>
+    <tr>
+      <th>対応機種</th>
+      <td><%= data.model %></td>
+    </tr>
+  </tbody>
+</table>
+
+
+<a href="<%= data.page %>" class="button-3" target="_blank" rel="noopener noreferrer">
+  公式ページ
+</a>
+
+
+
+  <p>
+    <a href="/zelda/edit/<%= data.id %>">編集</a>
+    <a href="/zelda">一覧に戻る</a>
+  </p>
+
+
+
+  </main><footer>
+  	<p class="footer-text">Legend of Zelda </p>
+  </footer>
+
+
+</body>
+</html>
+
+
+<!-- タイトル：https://saruwakakun.com/html-css/reference/h-design
+ 背景：https://webdesignfacts.net/entry/css-background-patterns/#gsc.tab=0
+ フッター背景：https://webdesignfacts.net/entry/css-background-patterns/
+ フッター：https://web-camp.io/magazine/archives/27870/ 
+ ボタン：https://pote-chil.com/css-stock/ja/button-->
