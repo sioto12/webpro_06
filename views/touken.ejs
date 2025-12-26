@@ -1,0 +1,284 @@
+<!Doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>あなたの組織図</title>
+  <style>
+
+    
+    .katana-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        padding: 20px;
+    }
+
+        
+    .katana-card {
+        display: flex; 
+        align-items: center; 
+        position: relative;
+        border: 6px double #101d95;
+        border-radius: 12px;
+        width: 400px; 
+        background-color: #ffffff;
+        overflow: hidden;
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+        
+    }
+
+     .katana-card img {
+        width: 120px; 
+        height: auto;
+        object-fit: cover;
+        flex-shrink: 0; 
+    }
+
+    .katana-info {
+        padding: 12px;
+        flex-grow: 1; 
+    }
+
+    .delete-form {
+        position: absolute;
+        right: 10px;         
+        bottom: 10px;    
+        margin: 0;
+    }
+
+    .btn-right-radius {
+      position: relative;
+      display: inline-block;
+      font-weight: bold;
+      padding: 0.25em 0.8em;
+      text-decoration: none;
+      color: #00BCD4;
+      background: #ECECEC;
+      border-radius: 0 15px 15px 0;
+      transition: .4s;
+      margin-top: 10px;
+    }
+
+    .btn-right-radius:hover {
+      background: #636363;
+      color: #fff; 
+    }
+
+    .btn-stitch {
+        display: inline-block;
+        padding: 0.5em 1em;
+        text-decoration: none;
+        background: #668ad8;
+        color: #FFF;
+        border-radius: 4px;
+        box-shadow: 0px 0px 0px 5px #668ad8;
+        border: dashed 1px #FFF;
+    }
+
+    .btn-stitch:hover {
+        border: dotted 1px #FFF;
+    }
+
+    .add-link {
+      display: block;
+      margin: 20px;
+      color: #4a90e2;
+    }
+
+    .bg_pattern {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: #f5f5f5;
+        opacity: 0.4;
+        z-index: -1;
+    }
+
+    .heading-25 {
+        position: relative;
+        padding-top: .75em;
+        color: #333333;
+        font-family: "MS PMincho", "Yu Mincho", "Hiragino Mincho ProN", serif;
+    }
+
+    .heading-25::before {
+        position: absolute;
+        bottom: .5em;
+        left: 0;
+        z-index: -1;
+        color: #5d97ae;
+        font-size: 1.5em;
+        line-height: 1;
+        content: attr(data-word);
+        pointer-events: none;
+        font-family: 'Georgia', serif;
+    }
+
+    .button-46 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 10px 10px rgb(0 0 0 / 20%);
+    background-image: linear-gradient(0, #7b1818, #8b2b2b);
+    color: #333333;
+    font-weight: 600;
+    font-size: .9em;
+    transition: transform .3s, box-shadow .3s;
+    
+    }
+
+    .button-46:hover {
+        transform: scale(.99);
+        box-shadow: 0 5px 5px rgb(0 0 0 / 20%);
+    }
+
+    .button-46 span {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background-image: linear-gradient(0, #fff, #ddd);
+        line-height: 45px;
+    }
+
+    
+
+    .box19 {
+        position: relative;
+        display: inline-block;
+        padding:0.3em 6.0em;
+    }
+    .box19:before,.box19:after{ 
+        content:'';
+        width: 20px;
+        height: 30px;
+        position: absolute;
+        display: inline-block;
+    }
+    .box19:before{
+        border-left: solid 1px #5767bf;
+        border-top: solid 1px #5767bf;
+        top:0;
+        left: 0;
+    }
+    .box19:after{
+        border-right: solid 1px #5767bf;
+        border-bottom: solid 1px #5767bf;
+        bottom:0;
+        right: 0;
+    }
+    .box19 p {
+        margin: 0; 
+        padding: 0;
+    }
+
+    :root {
+  /* 変数の設定（ここで色やサイズを一括調整できます） */
+  --color-pattern: #f2f2e4;
+  --color-bg: rgb(255, 255, 255); /* $color-4 */
+  --size: 2.8em;
+  
+  /* 計算値（元のSCSSの計算式を再現） */
+  --step: calc(var(--size) / 18);
+  --space: calc(var(--size) / 8.4);
+  --small-b: calc((var(--space) * 3 + var(--step)) / 2);
+  --small-c: calc(var(--size) + var(--space) - var(--step) / 1.9);
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  background-color: var(--color-bg);
+  background-image: 
+    /* 右側の半円 */
+    radial-gradient(circle at right,
+      transparent calc(var(--space)),
+      var(--color-pattern) calc(var(--space)), 
+      var(--color-pattern) calc(var(--space) + var(--step)),
+      transparent calc(var(--space) + var(--step)), 
+      transparent calc(var(--space) * 2 + var(--step)),
+      var(--color-pattern) calc(var(--space) * 2 + var(--step)), 
+      var(--color-pattern) calc(var(--space) * 2 + var(--step) * 2),
+      transparent calc(var(--space) * 2 + var(--step) * 2), 
+      transparent calc(var(--space) * 3 + var(--step) * 2),
+      var(--color-pattern) calc(var(--space) * 3 + var(--step) * 2), 
+      var(--color-pattern) calc(var(--space) * 3 + var(--step) * 3),
+      transparent calc(var(--space) * 3 + var(--step) * 3)
+    ),
+    /* 左側の半円 */
+    radial-gradient(circle at left,
+      transparent var(--small-b),
+      var(--color-pattern) var(--small-b), 
+      var(--color-pattern) calc(var(--small-b) + var(--step)),
+      transparent calc(var(--small-b) + var(--step)), 
+      transparent calc(var(--small-b) + var(--step) + var(--space)),
+      var(--color-pattern) calc(var(--small-b) + var(--step) + var(--space)), 
+      var(--color-pattern) calc(var(--small-b) + var(--step) * 2 + var(--space)),
+      transparent calc(var(--small-b) + var(--step) * 2 + var(--space))
+    ),
+    /* 小さな装飾部分 */
+    linear-gradient(45deg, var(--color-pattern) var(--step), transparent var(--step)),
+    linear-gradient(-45deg, var(--color-pattern) var(--step), transparent var(--step)),
+    linear-gradient(135deg, var(--color-pattern) var(--step), transparent var(--step)),
+    linear-gradient(-135deg, var(--color-pattern) var(--step), transparent var(--step));
+
+  background-size: var(--size) var(--size);
+  background-position: 0 0, 0 var(--small-c), 
+                       calc(var(--small-b) + var(--step) * 2 + var(--space)) var(--step),
+                       calc(var(--small-b) + var(--step) * 2 + var(--space)) var(--step),
+                       calc(var(--small-b) + var(--step) * 2 + var(--space)) var(--step),
+                       calc(var(--small-b) + var(--step) * 2 + var(--space)) var(--step);
+}
+  </style>
+
+
+
+
+</head>
+<body>
+  <div class="box19">
+    <h2 class="heading-25" data-word="刀剣乱舞">あなたの組織図</h2>
+  </div> 
+
+
+  <div class="katana-list">
+    <% for( let row of data ) { %>
+      <div class="katana-card">
+        <img src="<%= row.image %>" class="katana-img" alt="image">
+        
+        <div class="card-info">
+          <h3><%= row.name %></h3>
+          <p>役職: <%= row.job %></p>
+          
+          <a href="/touken/<%= row.id %>" class="btn-right-radius">詳細を見る</a>
+
+
+
+          <form action="/touken/delete/<%= row.id %>" method="GET" class="delete-form">
+            <button type="submit" onclick="return confirm('削除しますか？')" class="button-46">
+                <span>削除</span>
+            </button>
+          </form>
+
+        </div>
+      </div>
+    <% } %>
+  </div>
+
+  <a href="/touken/create" class="btn-stitch">追加画面へ</a>
+</body>
+</html>
+
+
+
+<!-- タイトル括弧：https://saruwakakun.com/html-css/reference/box
+ タイトル：https://pote-chil.com/css-stock/ja/heading
+削除ボタン：https://pote-chil.com/css-stock/ja/button
+詳細・追加ボタン：https://saruwakakun.com/html-css/reference/buttons
+背景：https://webdesignfacts.net/entry/css-background-patterns/ -->

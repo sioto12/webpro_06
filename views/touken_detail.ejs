@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title><%= data.name %></title>
+  <style>
+   h1 {
+  position: relative;
+  display: inline-block;
+  padding: 0 55px;
+}
+
+h1:before, h1:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  display: inline-block;
+  width: 45px;
+  height: 1px;
+  background-color: black;
+}
+
+h1:before {
+  left:0;
+}
+h1:after {
+  right: 0;
+}
+
+    table {
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+
+  body {
+
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: 
+      radial-gradient(rgb(189, 183, 183) 3px, transparent 4px),
+      radial-gradient(rgb(179, 177, 177) 3px, transparent 4px),
+      linear-gradient(#fff 4px, transparent 0),
+      linear-gradient(45deg, transparent 74px, transparent 75px, #a4a4a4 75px, #a4a4a4 76px, transparent 77px, transparent 109px),
+      linear-gradient(-45deg, transparent 75px, transparent 76px, #a4a4a4 76px, #a4a4a4 77px, transparent 78px, transparent 109px),
+      #fff;
+      background-size: 109px 109px, 109px 109px,100% 6px, 109px 109px, 109px 109px;
+      background-position: 54px 55px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
+  }
+
+  .table_design03 {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 700px;
+    background-color: #ffffff; 
+    margin: 20px auto;
+  }
+  .table_design03 th, .table_design03 td {
+    border-bottom: 2px solid #c1c7c6;
+    padding: 1em;
+  }
+  .table_design03 th {
+    border-bottom: 2px solid #4d9bc1;;
+    font-weight: bold;
+    text-align: center;
+    width: 20%;
+    min-width: 4em;
+  }
+
+  main {
+  flex: 1; 
+  padding: 20px; 
+  text-align: center; 
+  }
+
+  footer {
+  /* 変数の定義（元のSassの値をCSS変数に変換） */
+  --color-1: #efebda;
+  --color-2: #f0edd9;
+  --color-3: #f2f4eb;
+  --color-4: #e4e6d6;
+  --color-5: #ecebe0;
+  --color-5-t: rgba(255, 255, 255, 0);
+  --size: 3em;
+  --step: 6.5%;
+
+
+  width: 100%;
+  min-height: 100px; 
+  padding: 40px 20px;
+
+
+  background-color: var(--color-1);
+  background-image: 
+    radial-gradient(circle at center 0,
+      var(--color-4) var(--step),
+      var(--color-5) var(--step), var(--color-5) calc(var(--step) * 2),
+      var(--color-1) calc(var(--step) * 2.2), var(--color-1) calc(var(--step) * 3),
+      var(--color-2) calc(var(--step) * 3.2), var(--color-2) calc(var(--step) * 4),
+      var(--color-3) calc(var(--step) * 4.2), var(--color-3) calc(var(--step) * 5),
+      var(--color-4) calc(var(--step) * 5.2), var(--color-4) calc(var(--step) * 6),
+      var(--color-5) calc(var(--step) * 6.2), var(--color-5) calc(var(--step) * 7),
+      var(--color-5-t) calc(var(--step) * 7.2)
+    ),
+    radial-gradient(circle at center 0,
+      var(--color-4) var(--step),
+      var(--color-5) var(--step), var(--color-5) calc(var(--step) * 2),
+      var(--color-1) calc(var(--step) * 2.2), var(--color-1) calc(var(--step) * 3),
+      var(--color-2) calc(var(--step) * 3.2), var(--color-2) calc(var(--step) * 4),
+      var(--color-3) calc(var(--step) * 4.2), var(--color-3) calc(var(--step) * 5),
+      var(--color-4) calc(var(--step) * 5.2), var(--color-4) calc(var(--step) * 6),
+      var(--color-5) calc(var(--step) * 6.2), var(--color-5) calc(var(--step) * 7),
+      var(--color-5-t) calc(var(--step) * 7.2)
+    ),
+    radial-gradient(circle at center var(--size),
+      var(--color-4) var(--step),
+      var(--color-5) var(--step), var(--color-5) calc(var(--step) * 2),
+      var(--color-1) calc(var(--step) * 2.2), var(--color-1) calc(var(--step) * 3),
+      var(--color-2) calc(var(--step) * 3.2), var(--color-2) calc(var(--step) * 4),
+      var(--color-3) calc(var(--step) * 4.2), var(--color-3) calc(var(--step) * 5),
+      var(--color-4) calc(var(--step) * 5.2), var(--color-4) calc(var(--step) * 6),
+      var(--color-5) calc(var(--step) * 6.2), var(--color-5) calc(var(--step) * 7),
+      var(--color-5-t) calc(var(--step) * 7.2)
+    ),
+    radial-gradient(circle at center var(--size),
+      var(--color-4) var(--step),
+      var(--color-5) var(--step), var(--color-5) calc(var(--step) * 2),
+      var(--color-1) calc(var(--step) * 2.2), var(--color-1) calc(var(--step) * 3),
+      var(--color-2) calc(var(--step) * 3.2), var(--color-2) calc(var(--step) * 4),
+      var(--color-3) calc(var(--step) * 4.2), var(--color-3) calc(var(--step) * 5),
+      var(--color-4) calc(var(--step) * 5.2), var(--color-4) calc(var(--step) * 6),
+      var(--color-5) calc(var(--step) * 6.2), var(--color-5) calc(var(--step) * 7),
+      var(--color-5-t) calc(var(--step) * 7.2)
+    );
+
+  background-position: 0 0, calc(var(--size) / 2) calc(var(--size) / 2), 0 0, calc(var(--size) / 2) calc(var(--size) / 2);
+  background-size: var(--size) var(--size);
+
+  display: flex;         
+  justify-content: center; 
+  align-items: center;
+}
+
+  .footer-text {
+    color: #186220;
+    font-size: 1.5em;
+    font-family: 'Georgia', serif;
+  }
+
+  .button-3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    padding: .9em 2em;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0 2px 3px rgb(0 0 0 / 25%), 0 2px 3px -2px rgb(0 0 0 / 15%);
+    background-color: #ddd3a2;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1em;
+}
+
+.button-3:hover {
+    background-color: #cdc392;
+}
+
+.button-13 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none; 
+    width: 80px;
+    height: 80px;
+    border: none;
+    border-bottom: solid 2px #c0c0c0;
+    border-radius: 50%;
+    box-shadow: inset 15px 30px 40px rgba(255, 255, 255, 0.5), 0 3px 7px rgba(0, 0, 0, .2);
+    background-image: linear-gradient(#118d41 0%, #017d31 100%);
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1em;
+}
+
+/* 元の .button-13:disabled を以下に書き換えます */
+.button-13.is-disabled {
+  background-image: none;      /* グラデーションを消す */
+  background-color: #ccc;      /* グレーにする */
+  cursor: not-allowed;         /* 禁止マークのカーソル */
+  opacity: 0.6;
+  pointer-events: none;        /* 【重要】クリックイベントを完全に無効化する */
+  border-bottom: solid 2px #999; 
+  box-shadow: none;            /* 立体感を消して平坦にする */
+}
+
+.button-group {
+  display: flex;
+  justify-content: center; /* 横方向の中央寄せ */
+  align-items: center;     /* 縦方向の高さの中央合わせ */
+  gap: 30px;               /* ボタン同士の間隔 */
+  margin: 0;          /* 前後の要素との隙間 */
+}
+
+
+
+  </style>
+</head>
+<body>
+<main>
+
+  <h1><%= data.name %></h1>
+
+  
+  <table class="table_design03" >
+    <tbody>
+    <tr>
+      <th>刀剣男士名</th>
+      <td><%= data.name %></td>
+    </tr>
+    <tr>
+      <th>役職</th>
+      <td><%= data.job %></td>
+    </tr>
+    <tr>
+      <th>刀種</th>
+      <td><%= data.family %></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="button-group">
+<a href="<%= data.page %>" class="button-3" target="_blank" rel="noopener noreferrer">
+  公式キャラページ
+</a>
+
+<% if (data.song) { %>
+  <a href="<%= data.song %>" class="button-13" target="_blank" rel="noopener noreferrer">近侍曲</a>
+<% } else { %>
+  <a class="button-13 is-disabled">未公開</a>
+<% } %>
+
+</div>
+
+  <p>
+    <a href="/touken/edit/<%= data.id %>">編集</a>
+    <a href="/touken">一覧に戻る</a>
+  </p>
+
+
+
+  </main><footer>
+  	<p class="footer-text">刀剣乱舞 - ONLINE -</p>
+  </footer>
+
+
+</body>
+</html>
+
+
+<!-- タイトル：https://saruwakakun.com/html-css/reference/h-design
+ 背景：https://webdesignfacts.net/entry/css-background-patterns/#gsc.tab=0
+ フッター背景：https://webdesignfacts.net/entry/css-background-patterns/
+ フッター：https://web-camp.io/magazine/archives/27870/ 
+ ボタン：https://pote-chil.com/css-stock/ja/button-->

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>サーヴァント登録</title>
+  <title>刀剣男士登録</title>
   <style>
     /* いただいたCSSをここに貼り付けました */
     .Form {
@@ -39,7 +39,7 @@
       width: 48px;
       display: inline-block;
       text-align: center;
-      background: #ff8484; /* FGOカラーに合わせて少し赤っぽく */
+      background: #ff8484; 
       color: #fff;
       font-size: 14px;
     }
@@ -86,43 +86,43 @@
 </head>
 <body>
 
-  <h2>戴冠サーヴァントの追加</h2>
+  <h2>新規刀剣男士の追加</h2>
 
-  <form action="/fgo" method="POST" class="Form">
+  <form action="/touken" method="POST" class="Form">
     <div class="Form-Item">
-      <p class="Form-Item-Label"><span class="Form-Item-Label-Required">必須</span>真名</p>
-      <input type="text" name="name" class="Form-Item-Input" placeholder="例）アルトリア・ペンドラゴン" required>
+      <p class="Form-Item-Label"><span class="Form-Item-Label-Required">必須</span>刀剣男士名</p>
+      <input type="text" name="name" class="Form-Item-Input" placeholder="例）三日月宗近" required>
     </div>
 
     <div class="Form-Item">
-      <p class="Form-Item-Label"><span class="Form-Item-Label-Required">必須</span>クラス</p>
-      <input type="text" name="class" class="Form-Item-Input" placeholder="例）セイバー" required>
+      <p class="Form-Item-Label"><span class="Form-Item-Label-Required">必須</span>役職</p>
+      <input type="text" name="job" class="Form-Item-Input" placeholder="例）近侍" required>
     </div>
 
     <div class="Form-Item">
-      <p class="Form-Item-Label"><span class="Form-Item-Label-Required">必須</span>副属性</p>
-      <input type="text" name="attribute" class="Form-Item-Input" placeholder="例）地" required>
+      <p class="Form-Item-Label"><span class="Form-Item-Label-Required">必須</span>刀種</p>
+      <input type="text" name="family" class="Form-Item-Input" placeholder="例）太刀" required>
     </div>
 
     <div class="Form-Item">
-      <p class="Form-Item-Label"><span class="Form-Item-Label-Required">必須</span>属性</p>
-      <input type="text" name="policy" class="Form-Item-Input" placeholder="例）秩序" required>
+      <p class="Form-Item-Label"><span class="Form-Item-Label-Required">必須</span>公式キャラページURL</p>
+      <input type="text" name="page" class="Form-Item-Input" placeholder="例）https://..." required>
     </div>
 
     <div class="Form-Item">
-      <p class="Form-Item-Label"><span class="Form-Item-Label-Required">必須</span>特性</p>
-      <input type="text" name="trait" class="Form-Item-Input" placeholder="例）善" required>
+      <p class="Form-Item-Label"><span class="Form-Item-Label-Required">必須</span>近侍曲URL</p>
+      <input type="text" name="song" class="Form-Item-Input" placeholder="例）https://...  or 未入力" required>
     </div>
 
     <div class="Form-Item">
       <p class="Form-Item-Label"><span class="Form-Item-Label-Required">必須</span>画像URL</p>
-      <input type="text" name="image" class="Form-Item-Input" placeholder="/public/images/fgo/..." required>
+      <input type="text" name="image" class="Form-Item-Input" placeholder="/public/images/刀剣乱舞/〇〇.png" required>
     </div>
 
-    <input type="submit" class="Form-Btn" value="戴冠する">
+    <input type="submit" class="Form-Btn" value="登録">
     
     <p style="text-align: center; margin-top: 20px;">
-      <a href="/fgo">一覧に戻る</a>
+      <a href="/touken">一覧に戻る</a>
     </p>
   </form>
 

@@ -9,15 +9,15 @@ app.use(express.urlencoded({ extended: true }));
 
 
 let servant = [
-  { id:0, name:"ヤマトタケル", class:"セイバー", attribute:"天", policy:"中立", trait:"善", image: "/public/images/ヤマトタケル.png" },
-  { id:1, name:"メリュジーヌ", class:"ランサー", attribute:"地", policy:"中立", trait:"悪", image: "/public/images/メリュジーヌ.png" },
-  { id:2, name:"バーヴァンシー", class:"アーチャー", attribute:"地", policy:"混沌", trait:"悪", image: "/public/images/バーヴァンシー.png" },
-  { id:3, name:"太公望", class:"ライダー", attribute:"地", policy:"中立", trait:"善", image: "/public/images/太公望.png" },
-  { id:4, name:"トネリコ", class:"キャスター", attribute:"地", policy:"秩序", trait:"中庸", image: "/public/images/トネリコ.png" },
-  { id:5, name:"光のコヤンスカヤ", class:"アサシン", attribute:"獣", policy:"秩序", trait:"悪", image: "/public/images/光のコヤンスカヤ.png" },
-  { id:6, name:"モルガン", class:"バーサーカー", attribute:"地", policy:"秩序", trait:"悪", image: "/public/images/モルガン.png" },
-  { id:7, name:"シエル", class:"ムーンキャンサー", attribute:"人", policy:"秩序", trait:"善", image: "/public/images/シエル.png" },
-  { id:8, name:"オルガマリー", class:"ビースト", attribute:"星", policy:"秩序", trait:"悪", image: "/public/images/オルガマリー.png" },
+  { id:0, name:"ヤマトタケル", class:"セイバー", attribute:"天", policy:"中立", trait:"善", image: "/public/images/fgo/ヤマトタケル.png" },
+  { id:1, name:"メリュジーヌ", class:"ランサー", attribute:"地", policy:"中立", trait:"悪", image: "/public/images/fgo/メリュジーヌ.png" },
+  { id:2, name:"バーヴァンシー", class:"アーチャー", attribute:"地", policy:"混沌", trait:"悪", image: "/public/images/fgo/バーヴァンシー.png" },
+  { id:3, name:"太公望", class:"ライダー", attribute:"地", policy:"中立", trait:"善", image: "/public/images/fgo/太公望.png" },
+  { id:4, name:"トネリコ", class:"キャスター", attribute:"地", policy:"秩序", trait:"中庸", image: "/public/images/fgo/トネリコ.png" },
+  { id:5, name:"光のコヤンスカヤ", class:"アサシン", attribute:"獣", policy:"秩序", trait:"悪", image: "/public/images/fgo/光のコヤンスカヤ.png" },
+  { id:6, name:"モルガン", class:"バーサーカー", attribute:"地", policy:"秩序", trait:"悪", image: "/public/images/fgo/モルガン.png" },
+  { id:7, name:"シエル", class:"ムーンキャンサー", attribute:"人", policy:"秩序", trait:"善", image: "/public/images/fgo/シエル.png" },
+  { id:8, name:"オルガマリー", class:"ビースト", attribute:"星", policy:"秩序", trait:"悪", image: "/public/images/fgo/オルガマリー.png" },
 ];
 
 // 一覧
