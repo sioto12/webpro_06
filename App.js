@@ -222,7 +222,6 @@ app.get("/zelda/edit/:number", (req, res) => {
 // Update
 app.post("/zelda/update/:number", (req, res) => {
   game[req.params.number].name = req.body.name;
-  game[req.params.number].job = req.body.job;
   game[req.params.number].model = req.body.model;
   game[req.params.number].page = req.body.page;
   game[req.params.number].image = req.body.image;
