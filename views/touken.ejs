@@ -179,12 +179,10 @@
     }
 
     :root {
-  /* 変数の設定（ここで色やサイズを一括調整できます） */
   --color-pattern: #f2f2e4;
-  --color-bg: rgb(255, 255, 255); /* $color-4 */
+  --color-bg: rgb(255, 255, 255); 
   --size: 2.8em;
-  
-  /* 計算値（元のSCSSの計算式を再現） */
+
   --step: calc(var(--size) / 18);
   --space: calc(var(--size) / 8.4);
   --small-b: calc((var(--space) * 3 + var(--step)) / 2);
@@ -196,7 +194,6 @@ body {
   margin: 0;
   background-color: var(--color-bg);
   background-image: 
-    /* 右側の半円 */
     radial-gradient(circle at right,
       transparent calc(var(--space)),
       var(--color-pattern) calc(var(--space)), 
@@ -211,7 +208,6 @@ body {
       var(--color-pattern) calc(var(--space) * 3 + var(--step) * 3),
       transparent calc(var(--space) * 3 + var(--step) * 3)
     ),
-    /* 左側の半円 */
     radial-gradient(circle at left,
       transparent var(--small-b),
       var(--color-pattern) var(--small-b), 
@@ -222,7 +218,6 @@ body {
       var(--color-pattern) calc(var(--small-b) + var(--step) * 2 + var(--space)),
       transparent calc(var(--small-b) + var(--step) * 2 + var(--space))
     ),
-    /* 小さな装飾部分 */
     linear-gradient(45deg, var(--color-pattern) var(--step), transparent var(--step)),
     linear-gradient(-45deg, var(--color-pattern) var(--step), transparent var(--step)),
     linear-gradient(135deg, var(--color-pattern) var(--step), transparent var(--step)),

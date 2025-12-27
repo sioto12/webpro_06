@@ -20,7 +20,6 @@ let servant = [
 
 // 一覧
 app.get("/fgo", (req, res) => {
-  // 本来ならここにDBとのやり取りが入る
   res.render('fgo', {data: servant} );
 });
 
@@ -31,7 +30,6 @@ app.get("/fgo/create", (req, res) => {
 
 // Read
 app.get("/fgo/:number", (req, res) => {
-  // 本来ならここにDBとのやり取りが入る
   const number = req.params.number;
   const detail = servant[ number ];
   res.render('fgo_detail', {data: detail} );
@@ -40,16 +38,12 @@ app.get("/fgo/:number", (req, res) => {
 
 // Delete
 app.get("/fgo/delete/:number", (req, res) => {
-  // 本来は削除の確認ページを表示する
-  // 本来は削除する番号が存在するか厳重にチェックする
-  // 本来ならここにDBとのやり取りが入る
   servant.splice( req.params.number, 1 );
   res.redirect('/fgo' );
 });
 
 // Create
 app.post("/fgo", (req, res) => {
-  // 本来ならここにDBとのやり取りが入る
   const id = servant.length;
   const name = req.body.name;
   const s_class = req.body.class;
@@ -64,7 +58,6 @@ app.post("/fgo", (req, res) => {
 
 // Edit
 app.get("/fgo/edit/:number", (req, res) => {
-  // 本来ならここにDBとのやり取りが入る
   const number = req.params.number;
   const detail = servant[ number ];
   res.render('fgo_edit', {id: number, data: detail} );
@@ -72,8 +65,6 @@ app.get("/fgo/edit/:number", (req, res) => {
 
 // Update
 app.post("/fgo/update/:number", (req, res) => {
-  // 本来は変更する番号が存在するか，各項目が正しいか厳重にチェックする
-  // 本来ならここにDBとのやり取りが入る
   servant[req.params.number].name = req.body.name;
   servant[req.params.number].class = req.body.class;
   servant[req.params.number].attribute = req.body.attribute;
@@ -153,26 +144,26 @@ app.post("/touken/update/:number", (req, res) => {
 });
 
 let game = [
-  { id:0, name:"ゼルダの伝説", model:"ファミリーコンピュータ", page:"https://www.nintendo.com/jp/famicom/software/zelda1/index.html", image:"/public/images/ゼルダの伝説/ゼルダの伝説.png"},
-  { id:1, name:"リンクの冒険", model:"ファミリーコンピュータ", page:"https://www.nintendo.com/jp/famicom/software/zelda2/index.html", image:"/public/images/ゼルダの伝説/リンクの冒険.png"},
-  { id:2, name:"ゼルダの伝説　神々のトライフォース", model:"スーパーファミコン,ゲームボーイアドバンス", page:"https://www.nintendo.co.jp/n02/shvc/zl/index.html", image:"/public/images/ゼルダの伝説/神々のトライフォース.png"},
-  { id:3, name:"ゼルダの伝説　夢を見る島", model:"ゲームボーイ,Nintendo Switch", page:"https://www.nintendo.com/jp/switch/ar3na/index.html", image:"/public/images/ゼルダの伝説/夢を見る島.png"},
-  { id:4, name:"ゼルダの伝説　時のオカリナ", model:"NINTENDO 64,ニンテンドー3DS", page:"https://www.nintendo.co.jp/3ds/aqej/#/", image:"/public/images/ゼルダの伝説/時のオカリナ.png"},
-  { id:5, name:"ゼルダの伝説　ムジュラの仮面", model:"NINTENDO 64,ニンテンドー3DS", page:"https://www.nintendo.co.jp/3ds/ajrj/index.html", image:"/public/images/ゼルダの伝説/ムジュラの仮面.png"},
-  { id:6, name:"ゼルダの伝説　ふしぎの木の実", model:"ゲームボーイカラー", page:"https://www.nintendo.co.jp/n02/dmg/az7jaz8j/index.html", image:"/public/images/ゼルダの伝説/ふしぎの木の実.png"},
-  { id:7, name:"ゼルダの伝説　風のタクト", model:"ニンテンドー ゲームキューブ, Wii U", page:"https://www.nintendo.co.jp/wiiu/bczj/index.html", image:"/public/images/ゼルダの伝説/風のタクト.png"},
-  { id:8, name:"ゼルダの伝説　4つの剣", model:"ゲームボーイアドバンス", page:"https://www.nintendo.com/jp/games/feature/nintendo-classics/a-5190_j/index.html", image:"/public/images/ゼルダの伝説/4つの剣.png"},
-  { id:9, name:"ゼルダの伝説　4つの剣＋", model:"ゲームキューブ", page:"https://www.nintendo.co.jp/ngc/g4sj/index.html", image:"/public/images/ゼルダの伝説/4つの剣＋.png"},
-  { id:10, name:"ゼルダの伝説　ふしぎのぼうし", model:"ゲームボーイアドバンス", page:"https://www.nintendo.co.jp/n08/bzmj/index.html", image:"/public/images/ゼルダの伝説/ふしぎのぼうし.png"},
-  { id:11, name:"ゼルダの伝説　トワイライトプリンセス", model:"ゲームキューブ, Wii U", page:"https://www.nintendo.co.jp/wiiu/azaj/index.html", image:"/public/images/ゼルダの伝説/トワイライトプリンセス.png"},
-  { id:12, name:"ゼルダの伝説　夢幻の砂時計", model:"ニンテンドーDS", page:"https://www.nintendo.co.jp/ds/azej/index.html", image:"/public/images/ゼルダの伝説/夢幻の砂時計.png"},
-  { id:13, name:"ゼルダの伝説　大地の汽笛", model:"ニンテンドーDS", page:"https://www.nintendo.co.jp/ds/bkij/index.html", image:"/public/images/ゼルダの伝説/大地の汽笛.png"},
-  { id:14, name:"ゼルダの伝説　スカイウォードソード", model:"Wii, Nintendo Switch", page:"https://www.nintendo.com/jp/switch/az89a/index.html", image:"/public/images/ゼルダの伝説/スカイウォードソード.png"},
-  { id:15, name:"ゼルダの伝説　神々のトライフォース２", model:"ニンテンドー3DS", page:"https://www.nintendo.co.jp/3ds/bzlj/index.html", image:"/public/images/ゼルダの伝説/神々のトライフォース２.png"},
-  { id:16, name:"ゼルダの伝説　トライフォース３銃士", model:"ニンテンドー3DS", page:"https://www.nintendo.co.jp/3ds/ea3j/index.html", image:"/public/images/ゼルダの伝説/トライフォース３銃士.png"},
-  { id:17, name:"ゼルダの伝説　ブレス　オブ　ザ　ワイルド", model:"Nintendo Switch, Nintendo Switch2", page:"https://www.nintendo.com/jp/zelda/botw/index.html", image:"/public/images/ゼルダの伝説/ブレワイ.png"},
-  { id:18, name:"ゼルダの伝説　ティアーズ　オブ　ザ　キングダム", model:"Nintendo Switch, Nintendo Switch2", page:"https://www.nintendo.com/jp/zelda/totk/index.html", image:"/public/images/ゼルダの伝説/ティアキン.png"},
-  { id:19, name:"ゼルダの伝説　知恵のかりもの", model:"Nintendo Switch", page:"https://www.nintendo.com/jp/switch/bdgea/index.html", image:"/public/images/ゼルダの伝説/知恵のかりもの.png"},
+  { id:0, name:"ゼルダの伝説", model:"ファミリーコンピュータ", page:"https://www.nintendo.com/jp/famicom/software/zelda1/index.html", image:"/public/images/ゼルダ/ゼルダの伝説.png"},
+  { id:1, name:"リンクの冒険", model:"ファミリーコンピュータ", page:"https://www.nintendo.com/jp/famicom/software/zelda2/index.html", image:"/public/images/ゼルダ/リンクの冒険.png"},
+  { id:2, name:"ゼルダの伝説　神々のトライフォース", model:"スーパーファミコン,ゲームボーイアドバンス", page:"https://www.nintendo.co.jp/n02/shvc/zl/index.html", image:"/public/images/ゼルダ/神々のトライフォース.png"},
+  { id:3, name:"ゼルダの伝説　夢を見る島", model:"ゲームボーイ,Nintendo Switch", page:"https://www.nintendo.com/jp/switch/ar3na/index.html", image:"/public/images/ゼルダ/夢を見る島.png"},
+  { id:4, name:"ゼルダの伝説　時のオカリナ", model:"NINTENDO 64,ニンテンドー3DS", page:"https://www.nintendo.co.jp/3ds/aqej/#/", image:"/public/images/ゼルダ/時のオカリナ.png"},
+  { id:5, name:"ゼルダの伝説　ムジュラの仮面", model:"NINTENDO 64,ニンテンドー3DS", page:"https://www.nintendo.co.jp/3ds/ajrj/index.html", image:"/public/images/ゼルダ/ムジュラの仮面.png"},
+  { id:6, name:"ゼルダの伝説　ふしぎの木の実", model:"ゲームボーイカラー", page:"https://www.nintendo.co.jp/n02/dmg/az7jaz8j/index.html", image:"/public/images/ゼルダ/ふしぎの木の実.png"},
+  { id:7, name:"ゼルダの伝説　風のタクト", model:"ニンテンドー ゲームキューブ, Wii U", page:"https://www.nintendo.co.jp/wiiu/bczj/index.html", image:"/public/images/ゼルダ/風のタクト.png"},
+  { id:8, name:"ゼルダの伝説　4つの剣", model:"ゲームボーイアドバンス", page:"https://www.nintendo.com/jp/games/feature/nintendo-classics/a-5190_j/index.html", image:"/public/images/ゼルダ/4つの剣.png"},
+  { id:9, name:"ゼルダの伝説　4つの剣＋", model:"ゲームキューブ", page:"https://www.nintendo.co.jp/ngc/g4sj/index.html", image:"/public/images/ゼルダ/4つの剣＋.png"},
+  { id:10, name:"ゼルダの伝説　ふしぎのぼうし", model:"ゲームボーイアドバンス", page:"https://www.nintendo.co.jp/n08/bzmj/index.html", image:"/public/images/ゼルダ/ふしぎのぼうし.png"},
+  { id:11, name:"ゼルダの伝説　トワイライトプリンセス", model:"ゲームキューブ, Wii U", page:"https://www.nintendo.co.jp/wiiu/azaj/index.html", image:"/public/images/ゼルダ/トワイライトプリンセス.png"},
+  { id:12, name:"ゼルダの伝説　夢幻の砂時計", model:"ニンテンドーDS", page:"https://www.nintendo.co.jp/ds/azej/index.html", image:"/public/images/ゼルダ/夢幻の砂時計.png"},
+  { id:13, name:"ゼルダの伝説　大地の汽笛", model:"ニンテンドーDS", page:"https://www.nintendo.co.jp/ds/bkij/index.html", image:"/public/images/ゼルダ/大地の汽笛.png"},
+  { id:14, name:"ゼルダの伝説　スカイウォードソード", model:"Wii, Nintendo Switch", page:"https://www.nintendo.com/jp/switch/az89a/index.html", image:"/public/images/ゼルダ/スカイウォードソード.png"},
+  { id:15, name:"ゼルダの伝説　神々のトライフォース２", model:"ニンテンドー3DS", page:"https://www.nintendo.co.jp/3ds/bzlj/index.html", image:"/public/images/ゼルダ/神々のトライフォース２.png"},
+  { id:16, name:"ゼルダの伝説　トライフォース３銃士", model:"ニンテンドー3DS", page:"https://www.nintendo.co.jp/3ds/ea3j/index.html", image:"/public/images/ゼルダ/トライフォース３銃士.png"},
+  { id:17, name:"ゼルダの伝説　ブレス　オブ　ザ　ワイルド", model:"Nintendo Switch, Nintendo Switch2", page:"https://www.nintendo.com/jp/zelda/botw/index.html", image:"/public/images/ゼルダ/ブレワイ.png"},
+  { id:18, name:"ゼルダの伝説　ティアーズ　オブ　ザ　キングダム", model:"Nintendo Switch, Nintendo Switch2", page:"https://www.nintendo.com/jp/zelda/totk/index.html", image:"/public/images/ゼルダ/ティアキン.png"},
+  { id:19, name:"ゼルダの伝説　知恵のかりもの", model:"Nintendo Switch", page:"https://www.nintendo.com/jp/switch/bdgea/index.html", image:"/public/images/ゼルダ/知恵のかりもの.png"},
 
 ];
 

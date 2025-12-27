@@ -86,7 +86,6 @@ h1:after {
   }
 
   footer {
-  /* 変数の定義（元のSassの値をCSS変数に変換） */
   --color-1: #efebda;
   --color-2: #f0edd9;
   --color-3: #f2f4eb;
@@ -195,23 +194,23 @@ h1:after {
     font-size: 1em;
 }
 
-/* 元の .button-13:disabled を以下に書き換えます */
+
 .button-13.is-disabled {
-  background-image: none;      /* グラデーションを消す */
-  background-color: #ccc;      /* グレーにする */
-  cursor: not-allowed;         /* 禁止マークのカーソル */
+  background-image: none;   
+  background-color: #ccc;    
+  cursor: not-allowed;
   opacity: 0.6;
-  pointer-events: none;        /* 【重要】クリックイベントを完全に無効化する */
+  pointer-events: none;    
   border-bottom: solid 2px #999; 
-  box-shadow: none;            /* 立体感を消して平坦にする */
+  box-shadow: none;   
 }
 
 .button-group {
   display: flex;
-  justify-content: center; /* 横方向の中央寄せ */
-  align-items: center;     /* 縦方向の高さの中央合わせ */
-  gap: 30px;               /* ボタン同士の間隔 */
-  margin: 0;          /* 前後の要素との隙間 */
+  justify-content: center; 
+  align-items: center;  
+  gap: 30px;   
+  margin: 0;        
 }
 
 
@@ -272,6 +271,5 @@ h1:after {
 
 <!-- タイトル：https://saruwakakun.com/html-css/reference/h-design
  背景：https://webdesignfacts.net/entry/css-background-patterns/#gsc.tab=0
- フッター背景：https://webdesignfacts.net/entry/css-background-patterns/
  フッター：https://web-camp.io/magazine/archives/27870/ 
  ボタン：https://pote-chil.com/css-stock/ja/button-->
